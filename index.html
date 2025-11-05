@@ -3,98 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almanca A1 Kelime Çalışmaları</title>
-    <meta name="description" content="Aile birleşimi sınavı için en gerekli 100 Almanca kelimeyi telefondan çalışın. Öğren, tekrar et, test çöz ve yazma pratiği yap.">
+    <title>Mini Almanca A1 Kelime Eğitimi</title>
+    <meta name="description" content="Aile birleşimi sınavı için gerekli temel Almanca A1 kelimelerini pratik yaparak öğrenin.">
     <style>
         :root {
             color-scheme: light;
-            --primary: #1b6ca8;
-            --primary-dark: #15517d;
-            --accent: #f7b633;
-            --text: #1a1a1a;
-            --muted: #555;
-            --surface: #ffffff;
-            --surface-alt: #f2f6fb;
+            --blue: #1c6dd0;
+            --blue-dark: #134a8a;
+            --sand: #f9c74f;
+            --bg: #f6f8fb;
+            --card: #ffffff;
+            --text: #1c1c1c;
+            --muted: #4f5b6e;
         }
 
-        * {
+        *, *::before, *::after {
             box-sizing: border-box;
         }
 
         body {
             margin: 0;
             font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: var(--surface-alt);
+            background: var(--bg);
             color: var(--text);
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         header {
-            background: var(--primary);
-            color: #fff;
-            padding: 18px 16px 28px;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 28px 16px 18px;
+            background: var(--blue);
+            color: #fff;
         }
 
         header h1 {
-            margin: 0 0 8px;
-            font-size: clamp(1.5rem, 4vw, 1.9rem);
+            margin: 0;
+            font-size: clamp(1.6rem, 4vw, 2rem);
         }
 
         header p {
-            margin: 0;
-            font-size: clamp(0.95rem, 3vw, 1.05rem);
+            margin: 12px auto 0;
+            max-width: 520px;
+            font-size: clamp(1rem, 3.3vw, 1.1rem);
         }
 
         main {
-            padding: 16px;
-            max-width: 960px;
-            margin: 0 auto 64px;
+            max-width: 940px;
+            margin: 0 auto;
+            padding: 24px 16px 72px;
         }
 
-        nav {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 12px;
-            margin-bottom: 20px;
+        .intro {
+            background: linear-gradient(135deg, rgba(28, 109, 208, 0.08), rgba(249, 199, 79, 0.16));
+            border-radius: 20px;
+            padding: 16px 18px;
+            margin-bottom: 22px;
+            font-size: 0.98rem;
         }
 
-        nav button {
-            padding: 14px 10px;
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .tabs button {
+            flex: 1;
+            min-width: 140px;
             border: none;
-            border-radius: 14px;
             background: #fff;
-            color: var(--primary);
-            font-size: 0.95rem;
+            color: var(--blue);
             font-weight: 600;
-            box-shadow: 0 2px 6px rgba(27, 108, 168, 0.12);
+            border-radius: 999px;
+            padding: 12px 16px;
+            box-shadow: 0 4px 10px rgba(28, 109, 208, 0.12);
+            cursor: pointer;
             transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
         }
 
-        nav button.active,
-        nav button:focus-visible {
-            background: var(--primary);
-            color: #fff;
-            outline: none;
+        .tabs button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 14px rgba(27, 108, 168, 0.24);
+            box-shadow: 0 8px 18px rgba(28, 109, 208, 0.2);
         }
 
-        nav button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 14px rgba(27, 108, 168, 0.22);
+        .tabs button.active {
+            background: var(--blue);
+            color: #fff;
+            box-shadow: 0 10px 22px rgba(28, 109, 208, 0.28);
         }
 
         section {
             display: none;
-            background: var(--surface);
-            border-radius: 18px;
-            padding: 18px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            background: var(--card);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 24px rgba(16, 36, 94, 0.08);
         }
 
         section.active {
@@ -103,144 +107,116 @@
 
         h2 {
             margin-top: 0;
-            font-size: 1.3rem;
+            font-size: 1.28rem;
         }
 
-        .intro {
-            background: linear-gradient(135deg, rgba(27, 108, 168, 0.08), rgba(247, 182, 51, 0.14));
-            border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(27, 108, 168, 0.12);
-            color: var(--primary-dark);
-            border-radius: 999px;
-            padding: 6px 12px;
-            font-size: 0.8rem;
-            margin-right: 6px;
-            margin-bottom: 6px;
-        }
-
-        .filters {
+        .category-filter {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 18px;
+            gap: 8px;
+            margin-bottom: 16px;
         }
 
-        .filters button {
-            border: 1px solid rgba(27, 108, 168, 0.3);
-            background: transparent;
-            color: var(--primary);
-            padding: 8px 14px;
+        .category-filter button {
+            border: 1px solid rgba(28, 109, 208, 0.4);
             border-radius: 999px;
+            padding: 6px 14px;
+            background: transparent;
+            color: var(--blue);
             font-size: 0.9rem;
-            transition: background 0.15s ease, color 0.15s ease;
+            cursor: pointer;
         }
 
-        .filters button.active {
-            background: var(--primary);
+        .category-filter button.active {
+            background: var(--blue);
             color: #fff;
+            border-color: var(--blue);
         }
 
-        .word-grid {
+        .word-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
             gap: 12px;
         }
 
         .word-card {
-            background: var(--surface-alt);
-            border-radius: 12px;
+            background: rgba(28, 109, 208, 0.06);
+            border-radius: 14px;
             padding: 12px;
-            text-align: left;
-            box-shadow: inset 0 0 0 1px rgba(27, 108, 168, 0.08);
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .word-card strong {
-            font-size: 1.05rem;
-            color: var(--primary-dark);
         }
 
         .word-card span {
-            font-size: 0.9rem;
+            display: block;
+        }
+
+        .word-card .de {
+            font-weight: 700;
+            color: var(--blue-dark);
+        }
+
+        .word-card .tr {
+            font-size: 0.92rem;
             color: var(--muted);
         }
 
-        .flashcard {
-            background: linear-gradient(160deg, #fff, rgba(27, 108, 168, 0.05));
-            border-radius: 16px;
-            padding: 24px;
+        .flash-card {
+            background: linear-gradient(135deg, rgba(28, 109, 208, 0.1), rgba(249, 199, 79, 0.18));
+            border-radius: 18px;
+            padding: 28px 20px;
             text-align: center;
-            box-shadow: inset 0 0 0 1px rgba(27, 108, 168, 0.1);
             min-height: 180px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 12px;
+            gap: 14px;
         }
 
-        .flashcard .term {
+        .flash-word {
             font-size: clamp(1.6rem, 5vw, 2rem);
             font-weight: 700;
-            color: var(--primary-dark);
+            color: var(--blue-dark);
         }
 
-        .flashcard .translation {
-            font-size: 1.1rem;
+        .flash-translation {
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
             color: var(--muted);
         }
 
-        .actions {
-            margin-top: 16px;
+        .flash-actions {
             display: flex;
-            flex-wrap: wrap;
             gap: 10px;
+            flex-wrap: wrap;
             justify-content: center;
         }
 
-        .actions button {
-            padding: 12px 18px;
+        .flash-actions button,
+        .quiz button,
+        .writing button {
             border: none;
-            border-radius: 12px;
-            background: var(--primary);
+            border-radius: 999px;
+            background: var(--blue);
             color: #fff;
-            font-size: 0.95rem;
             font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            box-shadow: 0 6px 16px rgba(27, 108, 168, 0.24);
+            padding: 12px 20px;
+            cursor: pointer;
+            box-shadow: 0 8px 18px rgba(28, 109, 208, 0.22);
         }
 
-        .actions button.secondary {
-            background: rgba(27, 108, 168, 0.12);
-            color: var(--primary-dark);
+        .flash-actions button.secondary,
+        .quiz button.secondary,
+        .writing button.secondary {
+            background: rgba(28, 109, 208, 0.12);
+            color: var(--blue-dark);
             box-shadow: none;
         }
 
         .quiz-card {
-            background: linear-gradient(180deg, #fff, rgba(247, 182, 51, 0.08));
+            background: rgba(28, 109, 208, 0.08);
             border-radius: 16px;
             padding: 20px;
-            box-shadow: inset 0 0 0 1px rgba(247, 182, 51, 0.2);
             display: flex;
             flex-direction: column;
             gap: 16px;
-        }
-
-        .quiz-card h3 {
-            margin: 0;
-            font-size: 1.1rem;
         }
 
         .quiz-options {
@@ -249,164 +225,151 @@
         }
 
         .quiz-options button {
-            padding: 12px 14px;
-            border-radius: 12px;
-            border: 1px solid rgba(27, 108, 168, 0.18);
+            border: 1px solid rgba(28, 109, 208, 0.3);
             background: #fff;
+            color: var(--blue-dark);
+            border-radius: 12px;
+            padding: 12px 14px;
             text-align: left;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.12s ease;
         }
 
         .quiz-options button.correct {
-            border-color: #2a9d8f;
-            background: rgba(42, 157, 143, 0.12);
+            background: rgba(46, 204, 113, 0.14);
+            border-color: rgba(46, 204, 113, 0.6);
         }
 
-        .quiz-options button.incorrect {
-            border-color: #e63946;
-            background: rgba(230, 57, 70, 0.12);
+        .quiz-options button.wrong {
+            background: rgba(231, 76, 60, 0.14);
+            border-color: rgba(231, 76, 60, 0.6);
         }
 
-        .score {
-            text-align: center;
+        .quiz-progress {
             font-weight: 600;
-            color: var(--primary-dark);
+            color: var(--muted);
         }
 
-        .practice-card {
-            background: #fff;
-            border-radius: 16px;
+        .writing-card {
+            background: rgba(28, 109, 208, 0.08);
+            border-radius: 18px;
             padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            box-shadow: inset 0 0 0 1px rgba(27, 108, 168, 0.1);
+            gap: 16px;
         }
 
-        .practice-card input {
+        .writing-card textarea {
+            width: 100%;
+            min-height: 80px;
+            border-radius: 12px;
+            border: 1px solid rgba(28, 109, 208, 0.3);
             padding: 12px;
             font-size: 1rem;
-            border-radius: 12px;
-            border: 1px solid rgba(27, 108, 168, 0.25);
+            resize: vertical;
         }
 
-        .practice-card .feedback {
-            min-height: 24px;
+        .feedback {
             font-weight: 600;
         }
 
-        .tips {
-            margin-top: 20px;
-            background: rgba(247, 182, 51, 0.12);
-            border-radius: 14px;
-            padding: 16px;
-            font-size: 0.9rem;
+        .feedback.success {
+            color: #1e8f4c;
         }
 
-        footer {
-            text-align: center;
-            padding: 24px 12px 32px;
-            color: var(--muted);
-            font-size: 0.85rem;
+        .feedback.error {
+            color: #c0392b;
         }
 
-        @media (min-width: 768px) {
-            nav {
-                grid-template-columns: repeat(4, 1fr);
+        @media (max-width: 540px) {
+            .tabs button {
+                flex: 1 1 45%;
             }
-        }
 
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                transition-duration: 0.01ms !important;
-                animation-duration: 0.01ms !important;
+            section {
+                padding: 18px 16px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Almanca A1 Kelime Koçu</h1>
-        <p>20-50 yaş arası katılımcılar için aile birleşimi sınavına uygun, telefonda hızlı kelime pratiği.</p>
+        <h1>Mini Almanca A1 Kelime Programı</h1>
+        <p>Aile birleşimi sınavına hazırlanan 20-50 yaş arası yetişkinler için en gerekli 100 kelimeyi hızlıca tekrar edin.</p>
     </header>
-
     <main>
         <div class="intro">
-            <p>En önemli 100 Almanca kelimeyi kategorilere ayrılmış şekilde inceleyin, flashcard ile pekiştirin, hızlı testler çözüp yazma pratiği yapın. Her gün 10 dakika ayırmak temel kelime hazinesini güçlendirir.</p>
-            <div>
-                <span class="tag">📱 Mobil uyumlu</span>
-                <span class="tag">🎯 A1 hedef kelimeler</span>
-                <span class="tag">⏱️ Kısa ve net egzersizler</span>
-            </div>
+            <strong>Nasıl kullanılır?</strong>
+            <ul>
+                <li>"Kelime Listesi" bölümünden kategori seçerek anlamlara göz atın.</li>
+                <li>"Flash Kart" ile kelimeyi Almanca veya Türkçe görerek tekrar edin.</li>
+                <li>"Mini Test" bölümünde rastgele 10 soru çözerek kendinizi deneyin.</li>
+                <li>"Yazma" alıştırmasıyla Almanca yazımınızı kuvvetlendirin.</li>
+            </ul>
         </div>
 
-        <nav aria-label="Çalışma menüsü">
-            <button type="button" data-section="learn" class="active">Kelime Listesi</button>
-            <button type="button" data-section="flashcards">Flashcard</button>
-            <button type="button" data-section="quiz">Çoktan Seçmeli</button>
-            <button type="button" data-section="writing">Yazma Pratiği</button>
+        <nav class="tabs" aria-label="Çalışma araçları">
+            <button type="button" data-section="list" class="active">Kelime Listesi</button>
+            <button type="button" data-section="flash">Flash Kart</button>
+            <button type="button" data-section="quiz">Mini Test</button>
+            <button type="button" data-section="writing">Yazma</button>
         </nav>
 
-        <section id="learn" class="active" aria-live="polite">
-            <h2>Kategorilere göre kelimeler</h2>
-            <p>İpucu: Her kategoriden 5 kelime seçip gün içinde tekrar edin. Sınavda aile, alışveriş ve şehir içinde yol tarifleri öne çıkar.</p>
-            <div class="filters" role="tablist" aria-label="Kategori filtreleri">
-                <button type="button" class="active" data-filter="all">Tümü</button>
-            </div>
-            <div class="word-grid" id="wordGrid"></div>
+        <section id="list" class="active" aria-labelledby="Kelime Listesi">
+            <h2>Kelime Listesi</h2>
+            <p>Kategorilere göre en sık kullanılan temel kelimeleri keşfedin.</p>
+            <div class="category-filter" role="group" aria-label="Kategori seçimi"></div>
+            <div class="word-list" aria-live="polite"></div>
         </section>
 
-        <section id="flashcards" aria-live="polite">
-            <h2>Flashcard ile tekrar</h2>
-            <p>Ekrana gelen Almanca kelimenin Türkçesini hatırlayın ve kontrol edin. 10 doğru yaptıktan sonra kategori değiştirin.</p>
-            <div class="flashcard" id="flashcard">
-                <div class="term" id="flashcardTerm">Kelimeyi öğrenmeye hazır mısınız?</div>
-                <div class="translation" id="flashcardTranslation">Başlamak için "Yeni kart"a dokunun.</div>
+        <section id="flash" aria-labelledby="Flash Kart">
+            <h2>Flash Kart</h2>
+            <p>Kelimenin Türkçesini görün, Almancasını tahmin edin ve kontrol edin.</p>
+            <div class="flash-card" aria-live="polite">
+                <div class="flash-category"></div>
+                <div class="flash-word"></div>
+                <div class="flash-translation" hidden></div>
             </div>
-            <div class="actions">
-                <button type="button" id="newFlashcard">Yeni kart</button>
-                <button type="button" class="secondary" id="toggleTranslation">Çeviriyi Göster</button>
-            </div>
-        </section>
-
-        <section id="quiz" aria-live="polite">
-            <h2>Çoktan seçmeli test</h2>
-            <p>10 soruluk mini testlerle öğrenmenizi ölçün. Türkçe anlamı verilen kelimenin Almanca karşılığını seçin.</p>
-            <div class="quiz-card">
-                <h3 id="quizQuestion">Teste başlamak için butona basın.</h3>
-                <div class="quiz-options" id="quizOptions" role="group" aria-label="Çoktan seçmeli cevaplar"></div>
-                <div class="score" id="quizScore"></div>
-            </div>
-            <div class="actions">
-                <button type="button" id="startQuiz">Teste Başla</button>
-                <button type="button" class="secondary" id="nextQuestion" disabled>Sonraki Soru</button>
+            <div class="flash-actions">
+                <button type="button" class="secondary" id="flip-card">Anlamı Göster</button>
+                <button type="button" id="next-card">Sonraki Kelime</button>
             </div>
         </section>
 
-        <section id="writing" aria-live="polite">
-            <h2>Yazma pratiği</h2>
-            <p>Günlük yazışma ve sınav formu doldurmalarında kullanılan kelimeleri yazmayı pekiştirin. Türkçe kelimenin Almancasını yazın.</p>
-            <div class="practice-card">
-                <div>
-                    <strong id="writingPrompt">Hazır olduğunuzda "Yeni Kelime"ye dokunun.</strong>
+        <section id="quiz" aria-labelledby="Mini Test">
+            <h2>Mini Test</h2>
+            <p>10 soruluk çoktan seçmeli test ile öğrendiklerinizi ölçün.</p>
+            <div class="quiz">
+                <div class="quiz-progress"></div>
+                <div class="quiz-card">
+                    <div class="quiz-question"></div>
+                    <div class="quiz-options"></div>
+                    <div class="quiz-feedback feedback"></div>
                 </div>
-                <label for="writingInput">Almanca karşılığı:</label>
-                <input type="text" id="writingInput" placeholder="Kelimeyi Almanca yazın" autocomplete="off" disabled>
-                <div class="actions">
-                    <button type="button" id="checkWriting" disabled>Kontrol Et</button>
-                    <button type="button" class="secondary" id="newWriting">Yeni Kelime</button>
+                <div class="flash-actions" style="margin-top: 16px;">
+                    <button type="button" class="secondary" id="restart-quiz">Sıfırla</button>
+                    <button type="button" id="next-question">Sonraki Soru</button>
                 </div>
-                <div class="feedback" id="writingFeedback" role="status"></div>
             </div>
-            <div class="tips">
-                <p><strong>Çalışma tavsiyesi:</strong> Zorlandığınız kelimeleri bir deftere not edin. Kelimeyi içeren kısa cümle yazmak hafızayı güçlendirir. Örn: <em>"Ich brauche ein Ticket."</em></p>
+        </section>
+
+        <section id="writing" aria-labelledby="Yazma">
+            <h2>Yazma Alıştırması</h2>
+            <p>Türkçe anlamı verilen kelimenin Almancasını yazın, cevaplarınızı hemen kontrol edin.</p>
+            <div class="writing">
+                <div class="writing-card">
+                    <div class="writing-question"></div>
+                    <textarea id="writing-input" placeholder="Almanca cevabınızı yazın..."></textarea>
+                    <div class="flash-actions">
+                        <button type="button" id="check-writing">Cevabı Kontrol Et</button>
+                        <button type="button" class="secondary" id="next-writing">Yeni Kelime</button>
+                    </div>
+                    <div class="writing-feedback feedback" aria-live="polite"></div>
+                </div>
             </div>
         </section>
     </main>
-
-    <footer>
-        © 2024 TAC Dil Destek • Almanca A1 aile birleşimi kelime koçu
-    </footer>
 
     <script>
         const vocabulary = [
@@ -420,7 +383,6 @@
             { german: "Wie geht's?", turkish: "Nasılsın?", category: "Selamlaşma" },
             { german: "Willkommen", turkish: "Hoş geldiniz", category: "Selamlaşma" },
             { german: "Entschuldigung", turkish: "Affedersiniz", category: "Selamlaşma" },
-
             { german: "Mutter", turkish: "Anne", category: "Aile" },
             { german: "Vater", turkish: "Baba", category: "Aile" },
             { german: "Eltern", turkish: "Ebeveynler", category: "Aile" },
@@ -431,7 +393,6 @@
             { german: "Tochter", turkish: "Kız evlat", category: "Aile" },
             { german: "Familie", turkish: "Aile", category: "Aile" },
             { german: "Ehefrau", turkish: "Eş (kadın)", category: "Aile" },
-
             { german: "Haus", turkish: "Ev", category: "Günlük Hayat" },
             { german: "Wohnung", turkish: "Daire", category: "Günlük Hayat" },
             { german: "Zimmer", turkish: "Oda", category: "Günlük Hayat" },
@@ -442,7 +403,6 @@
             { german: "Stuhl", turkish: "Sandalye", category: "Günlük Hayat" },
             { german: "Bett", turkish: "Yatak", category: "Günlük Hayat" },
             { german: "Lampe", turkish: "Lamba", category: "Günlük Hayat" },
-
             { german: "Brot", turkish: "Ekmek", category: "Yiyecek & İçecek" },
             { german: "Wasser", turkish: "Su", category: "Yiyecek & İçecek" },
             { german: "Milch", turkish: "Süt", category: "Yiyecek & İçecek" },
@@ -453,7 +413,6 @@
             { german: "Suppe", turkish: "Çorba", category: "Yiyecek & İçecek" },
             { german: "Fleisch", turkish: "Et", category: "Yiyecek & İçecek" },
             { german: "Gemüse", turkish: "Sebze", category: "Yiyecek & İçecek" },
-
             { german: "Laden", turkish: "Dükkan", category: "Alışveriş" },
             { german: "Markt", turkish: "Pazar", category: "Alışveriş" },
             { german: "Preis", turkish: "Fiyat", category: "Alışveriş" },
@@ -464,7 +423,6 @@
             { german: "Kunde", turkish: "Müşteri", category: "Alışveriş" },
             { german: "Tasche", turkish: "Çanta", category: "Alışveriş" },
             { german: "Kasse", turkish: "Kasa", category: "Alışveriş" },
-
             { german: "Stadt", turkish: "Şehir", category: "Şehir & Yolculuk" },
             { german: "Straße", turkish: "Cadde", category: "Şehir & Yolculuk" },
             { german: "Bahnhof", turkish: "Tren istasyonu", category: "Şehir & Yolculuk" },
@@ -475,7 +433,6 @@
             { german: "Flughafen", turkish: "Havalimanı", category: "Şehir & Yolculuk" },
             { german: "Fahrkarte", turkish: "Bilet", category: "Şehir & Yolculuk" },
             { german: "Plan", turkish: "Plan / Harita", category: "Şehir & Yolculuk" },
-
             { german: "Heute", turkish: "Bugün", category: "Zaman & Takvim" },
             { german: "Morgen", turkish: "Yarın", category: "Zaman & Takvim" },
             { german: "Gestern", turkish: "Dün", category: "Zaman & Takvim" },
@@ -486,7 +443,6 @@
             { german: "Stunde", turkish: "Saat (60 dakika)", category: "Zaman & Takvim" },
             { german: "Minute", turkish: "Dakika", category: "Zaman & Takvim" },
             { german: "Termin", turkish: "Randevu", category: "Zaman & Takvim" },
-
             { german: "Arzt", turkish: "Doktor", category: "Sağlık" },
             { german: "Krank", turkish: "Hasta", category: "Sağlık" },
             { german: "Gesundheit", turkish: "Sağlık", category: "Sağlık" },
@@ -497,7 +453,6 @@
             { german: "Untersuchung", turkish: "Muayene", category: "Sağlık" },
             { german: "Rezept", turkish: "Reçete", category: "Sağlık" },
             { german: "Patient", turkish: "Hasta (kişi)", category: "Sağlık" },
-
             { german: "Küche", turkish: "Mutfak", category: "Ev & Eşyalar" },
             { german: "Bad", turkish: "Banyo", category: "Ev & Eşyalar" },
             { german: "Wohnzimmer", turkish: "Oturma odası", category: "Ev & Eşyalar" },
@@ -508,7 +463,6 @@
             { german: "Sofa", turkish: "Kanepe", category: "Ev & Eşyalar" },
             { german: "Teppich", turkish: "Halı", category: "Ev & Eşyalar" },
             { german: "Spiegel", turkish: "Ayna", category: "Ev & Eşyalar" },
-
             { german: "gehen", turkish: "Gitmek", category: "Fiiller" },
             { german: "kommen", turkish: "Gelmek", category: "Fiiller" },
             { german: "machen", turkish: "Yapmak", category: "Fiiller" },
@@ -521,244 +475,210 @@
             { german: "kaufen", turkish: "Satın almak", category: "Fiiller" }
         ];
 
-        const sections = document.querySelectorAll("main section");
-        const navButtons = document.querySelectorAll("nav button");
+        function shuffle(array) {
+            const clone = [...array];
+            for (let i = clone.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [clone[i], clone[j]] = [clone[j], clone[i]];
+            }
+            return clone;
+        }
 
-        navButtons.forEach(button => {
-            button.addEventListener("click", () => {
-                navButtons.forEach(btn => btn.classList.remove("active"));
-                button.classList.add("active");
+        const tabs = document.querySelectorAll('.tabs button');
+        const sections = document.querySelectorAll('main section');
 
-                const target = button.dataset.section;
-                sections.forEach(section => {
-                    section.classList.toggle("active", section.id === target);
-                });
+        tabs.forEach(button => {
+            button.addEventListener('click', () => {
+                tabs.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                sections.forEach(section => section.classList.remove('active'));
+                const selected = document.getElementById(button.dataset.section);
+                selected.classList.add('active');
             });
         });
 
-        // Kelime listesi oluşturma
-        const wordGrid = document.getElementById("wordGrid");
-        const filters = document.querySelector(".filters");
-        const categories = ["Tümü", ...new Set(vocabulary.map(item => item.category))];
+        // Kelime listesi
+        const categoryContainer = document.querySelector('.category-filter');
+        const wordListContainer = document.querySelector('.word-list');
+        const categories = ['Tümü', ...new Set(vocabulary.map(item => item.category))];
+        let currentCategory = 'Tümü';
 
-        categories.forEach(category => {
-            if (category === "Tümü") return;
-            const filterButton = document.createElement("button");
-            filterButton.type = "button";
-            filterButton.textContent = category;
-            filterButton.dataset.filter = category;
-            filters.appendChild(filterButton);
-        });
-
-        function renderWords(filter = "all") {
-            wordGrid.innerHTML = "";
-            const filteredWords = filter === "all" ? vocabulary : vocabulary.filter(item => item.category === filter);
-
-            filteredWords.forEach(item => {
-                const card = document.createElement("div");
-                card.className = "word-card";
-                card.innerHTML = `
-                    <strong>${item.german}</strong>
-                    <span>${item.turkish}</span>
-                    <span class="tag">${item.category}</span>
-                `;
-                wordGrid.appendChild(card);
+        function renderCategories() {
+            categoryContainer.innerHTML = '';
+            categories.forEach(category => {
+                const button = document.createElement('button');
+                button.textContent = category;
+                if (category === currentCategory) {
+                    button.classList.add('active');
+                }
+                button.addEventListener('click', () => {
+                    currentCategory = category;
+                    renderCategories();
+                    renderWordList();
+                });
+                categoryContainer.appendChild(button);
             });
         }
 
-        filters.addEventListener("click", event => {
-            const button = event.target.closest("button");
-            if (!button) return;
+        function renderWordList() {
+            wordListContainer.innerHTML = '';
+            const filtered = currentCategory === 'Tümü'
+                ? vocabulary
+                : vocabulary.filter(item => item.category === currentCategory);
 
-            filters.querySelectorAll("button").forEach(btn => btn.classList.remove("active"));
-            button.classList.add("active");
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'word-card';
+                card.innerHTML = `
+                    <span class="de">${item.german}</span>
+                    <span class="tr">${item.turkish}</span>
+                `;
+                wordListContainer.appendChild(card);
+            });
+        }
 
-            const filter = button.dataset.filter || "all";
-            renderWords(filter === "all" ? "all" : filter);
-        });
+        renderCategories();
+        renderWordList();
 
-        renderWords();
-
-        // Flashcard mantığı
-        let flashcardPool = shuffle([...vocabulary]);
+        // Flash kart
+        const flashCategory = document.querySelector('.flash-category');
+        const flashWord = document.querySelector('.flash-word');
+        const flashTranslation = document.querySelector('.flash-translation');
+        const flipCardButton = document.getElementById('flip-card');
+        const nextCardButton = document.getElementById('next-card');
         let currentFlashcard = null;
         let showTranslation = false;
 
-        function shuffle(array) {
-            const arr = [...array];
-            for (let i = arr.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [arr[i], arr[j]] = [arr[j], arr[i]];
-            }
-            return arr;
-        }
-
-        function getNextFlashcard() {
-            if (flashcardPool.length === 0) {
-                flashcardPool = shuffle([...vocabulary]);
-            }
-            currentFlashcard = flashcardPool.pop();
+        function loadFlashcard() {
+            currentFlashcard = vocabulary[Math.floor(Math.random() * vocabulary.length)];
             showTranslation = false;
-            updateFlashcard();
+            flashCategory.textContent = currentFlashcard.category;
+            flashWord.textContent = currentFlashcard.turkish;
+            flashTranslation.textContent = currentFlashcard.german;
+            flashTranslation.hidden = true;
+            flipCardButton.textContent = 'Anlamı Göster';
         }
 
-        function updateFlashcard() {
-            const termEl = document.getElementById("flashcardTerm");
-            const translationEl = document.getElementById("flashcardTranslation");
-
-            if (!currentFlashcard) {
-                termEl.textContent = "Kelimeyi görmek için 'Yeni kart' seçin.";
-                translationEl.textContent = "";
-                return;
-            }
-
-            termEl.textContent = currentFlashcard.german;
-            translationEl.textContent = showTranslation ? currentFlashcard.turkish : "Çeviriyi görmek için butona dokunun.";
-        }
-
-        document.getElementById("newFlashcard").addEventListener("click", () => {
-            getNextFlashcard();
-        });
-
-        document.getElementById("toggleTranslation").addEventListener("click", () => {
+        flipCardButton.addEventListener('click', () => {
             showTranslation = !showTranslation;
-            updateFlashcard();
+            flashTranslation.hidden = !showTranslation;
+            flashWord.textContent = showTranslation ? currentFlashcard.german : currentFlashcard.turkish;
+            flashTranslation.textContent = showTranslation ? currentFlashcard.turkish : currentFlashcard.german;
+            flipCardButton.textContent = showTranslation ? 'Türkçeyi Göster' : 'Anlamı Göster';
         });
 
-        // Quiz mantığı
-        const quizQuestion = document.getElementById("quizQuestion");
-        const quizOptions = document.getElementById("quizOptions");
-        const quizScore = document.getElementById("quizScore");
-        const startQuizBtn = document.getElementById("startQuiz");
-        const nextQuestionBtn = document.getElementById("nextQuestion");
+        nextCardButton.addEventListener('click', loadFlashcard);
+        loadFlashcard();
+
+        // Quiz
+        const quizProgress = document.querySelector('.quiz-progress');
+        const quizQuestion = document.querySelector('.quiz-question');
+        const quizOptions = document.querySelector('.quiz-options');
+        const quizFeedback = document.querySelector('.quiz-feedback');
+        const nextQuestionButton = document.getElementById('next-question');
+        const restartQuizButton = document.getElementById('restart-quiz');
 
         let quizPool = [];
         let quizIndex = 0;
-        let score = 0;
-        let answered = false;
+        let quizScore = 0;
+        let quizLocked = false;
 
-        function prepareQuiz() {
-            quizPool = shuffle([...vocabulary]).slice(0, 10);
+        function setupQuiz() {
+            quizPool = shuffle(vocabulary).slice(0, 10);
             quizIndex = 0;
-            score = 0;
-            quizScore.textContent = "";
-            nextQuestionBtn.disabled = false;
-            nextQuestionBtn.textContent = "Sonraki Soru";
-            loadQuizQuestion();
+            quizScore = 0;
+            quizLocked = false;
+            renderQuizQuestion();
         }
 
-        function loadQuizQuestion() {
-            answered = false;
+        function renderQuizQuestion() {
+            quizLocked = false;
             const current = quizPool[quizIndex];
-            quizQuestion.textContent = `Türkçesi "${current.turkish}" olan kelimenin Almancası nedir?`;
-            quizOptions.innerHTML = "";
+            quizProgress.textContent = `Soru ${quizIndex + 1} / ${quizPool.length} — Skor: ${quizScore}`;
+            quizQuestion.innerHTML = `<strong>${current.turkish}</strong> kelimesinin Almancası nedir?`;
+            quizFeedback.textContent = '';
+            quizOptions.innerHTML = '';
 
-            const options = shuffle([
-                current,
-                ...shuffle(vocabulary.filter(item => item.german !== current.german)).slice(0, 3)
-            ]).slice(0, 4);
+            const incorrectOptions = shuffle(vocabulary.filter(item => item.german !== current.german)).slice(0, 3);
+            const options = shuffle([current, ...incorrectOptions]);
 
             options.forEach(option => {
-                const button = document.createElement("button");
-                button.type = "button";
+                const button = document.createElement('button');
+                button.type = 'button';
                 button.textContent = option.german;
-                button.addEventListener("click", () => selectQuizAnswer(button, option.german === current.german));
+                button.addEventListener('click', () => {
+                    if (quizLocked) return;
+                    quizLocked = true;
+                    const correct = option.german === current.german;
+                    if (correct) {
+                        button.classList.add('correct');
+                        quizScore += 1;
+                        quizFeedback.textContent = 'Harika! Doğru cevap.';
+                        quizFeedback.className = 'quiz-feedback feedback success';
+                    } else {
+                        button.classList.add('wrong');
+                        quizFeedback.textContent = `Doğru cevap: ${current.german}`;
+                        quizFeedback.className = 'quiz-feedback feedback error';
+                        const correctButton = [...quizOptions.children].find(btn => btn.textContent === current.german);
+                        if (correctButton) {
+                            correctButton.classList.add('correct');
+                        }
+                    }
+                    quizProgress.textContent = `Soru ${quizIndex + 1} / ${quizPool.length} — Skor: ${quizScore}`;
+                });
                 quizOptions.appendChild(button);
             });
-
-            quizScore.textContent = `Soru ${quizIndex + 1} / ${quizPool.length}`;
         }
 
-        function selectQuizAnswer(button, isCorrect) {
-            if (answered) return;
-            answered = true;
-
-            if (isCorrect) {
-                button.classList.add("correct");
-                score++;
-            } else {
-                button.classList.add("incorrect");
-                // Doğru cevabı işaretle
-                [...quizOptions.children].forEach(optionButton => {
-                    if (optionButton.textContent === quizPool[quizIndex].german) {
-                        optionButton.classList.add("correct");
-                    }
-                });
-            }
-
-            if (quizIndex === quizPool.length - 1) {
-                nextQuestionBtn.textContent = "Skoru Gör";
-            }
-        }
-
-        function goToNextQuestion() {
-            if (!quizPool.length) return;
-            if (!answered) return;
-
+        nextQuestionButton.addEventListener('click', () => {
             if (quizIndex < quizPool.length - 1) {
-                quizIndex++;
-                loadQuizQuestion();
+                quizIndex += 1;
+                renderQuizQuestion();
             } else {
-                quizQuestion.textContent = "Test tamamlandı!";
-                quizOptions.innerHTML = "";
-                quizScore.textContent = `Toplam skorunuz: ${score} / ${quizPool.length}`;
-                nextQuestionBtn.disabled = true;
-            }
-        }
-
-        startQuizBtn.addEventListener("click", prepareQuiz);
-        nextQuestionBtn.addEventListener("click", goToNextQuestion);
-
-        // Yazma pratiği
-        const writingPrompt = document.getElementById("writingPrompt");
-        const writingInput = document.getElementById("writingInput");
-        const writingFeedback = document.getElementById("writingFeedback");
-        const checkWritingBtn = document.getElementById("checkWriting");
-        const newWritingBtn = document.getElementById("newWriting");
-
-        let currentWriting = null;
-
-        function newWritingWord() {
-            currentWriting = shuffle([...vocabulary]).pop();
-            writingPrompt.textContent = `Türkçe: "${currentWriting.turkish}"`; 
-            writingInput.value = "";
-            writingInput.disabled = false;
-            writingInput.focus();
-            checkWritingBtn.disabled = false;
-            writingFeedback.textContent = "";
-        }
-
-        function checkWriting() {
-            if (!currentWriting) return;
-            const answer = writingInput.value.trim().toLowerCase();
-            const correct = currentWriting.german.toLowerCase();
-
-            if (!answer) {
-                writingFeedback.textContent = "Kelimeyi yazmayı deneyin.";
-                writingFeedback.style.color = "#e76f51";
-                return;
-            }
-
-            if (answer === correct) {
-                writingFeedback.textContent = "Harika! Doğru yazdınız.";
-                writingFeedback.style.color = "#2a9d8f";
-            } else {
-                writingFeedback.textContent = `Doğru cevap: "${currentWriting.german}"`; 
-                writingFeedback.style.color = "#e63946";
-            }
-
-            checkWritingBtn.disabled = true;
-            writingInput.disabled = true;
-        }
-
-        checkWritingBtn.addEventListener("click", checkWriting);
-        newWritingBtn.addEventListener("click", newWritingWord);
-        writingInput.addEventListener("keydown", event => {
-            if (event.key === "Enter") {
-                event.preventDefault();
-                checkWriting();
+                quizFeedback.textContent = `Test tamamlandı! Toplam skorunuz: ${quizScore} / ${quizPool.length}`;
+                quizFeedback.className = 'quiz-feedback feedback success';
             }
         });
+
+        restartQuizButton.addEventListener('click', setupQuiz);
+        setupQuiz();
+
+        // Yazma alıştırması
+        const writingQuestion = document.querySelector('.writing-question');
+        const writingInput = document.getElementById('writing-input');
+        const checkWritingButton = document.getElementById('check-writing');
+        const nextWritingButton = document.getElementById('next-writing');
+        const writingFeedback = document.querySelector('.writing-feedback');
+        let currentWriting = null;
+
+        function loadWritingWord() {
+            currentWriting = vocabulary[Math.floor(Math.random() * vocabulary.length)];
+            writingQuestion.innerHTML = `<strong>${currentWriting.turkish}</strong> kelimesinin Almancası nedir?`;
+            writingInput.value = '';
+            writingFeedback.textContent = '';
+            writingFeedback.className = 'writing-feedback feedback';
+            writingInput.focus();
+        }
+
+        checkWritingButton.addEventListener('click', () => {
+            const answer = writingInput.value.trim().toLowerCase();
+            if (!answer) {
+                writingFeedback.textContent = 'Lütfen bir cevap yazın.';
+                writingFeedback.className = 'writing-feedback feedback error';
+                return;
+            }
+            const correct = currentWriting.german.toLowerCase();
+            if (answer === correct) {
+                writingFeedback.textContent = 'Tebrikler, doğru yazdınız!';
+                writingFeedback.className = 'writing-feedback feedback success';
+            } else {
+                writingFeedback.textContent = `Doğru cevap: "${currentWriting.german}"`; 
+                writingFeedback.className = 'writing-feedback feedback error';
+            }
+        });
+
+        nextWritingButton.addEventListener('click', loadWritingWord);
+        loadWritingWord();
     </script>
 </body>
 </html>
