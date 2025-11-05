@@ -1,111 +1,834 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yorum yaparak tecrübenizi paylaşın ve sınav için katılımcı kodunuzu alın. TAC Dil Kursu, kaliteli eğitim ve sınav hazırlığıyla fark yaratıyor.">
-    <title>Yorum Yap ve Katılım Kodu Al</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f9f9f9;
-        }
-
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-
-        iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-            margin-bottom: 20px;
-        }
-
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        .button:hover {
-            background-color: #45a049;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        @media (max-width: 600px) {
-            iframe {
-                height: 300px;
-            }
-
-            .button {
-                font-size: 16px;
-                padding: 8px 16px;
-            }
-        }
-    </style>
-    <script>
-        function showPasswordInput() {
-            document.getElementById("passwordSection").classList.remove("hidden");
-        }
-
-        function generateRandomCode() {
-            var dob = document.getElementById("dob").value;
-            
-            if (dob) {
-                // Random 6-digit code generation
-                var randomCode = Math.floor(100000 + Math.random() * 900000);
-                document.getElementById("result").innerText = "Katılımcı Kodu: " + randomCode;
-                document.getElementById("result").classList.remove("hidden");
-            } else {
-                alert("Lütfen doğum tarihini giriniz.");
-            }
-        }
-    </script>
-</head>
-<body>
-
-<header>
-    <h1>TAC Dil Kursu Yorum ve Katılım Kodu</h1>
-</header>
-
-<main>
-    <h2>Yorum yaparak tecrübenizi paylaşın!</h2>
-    <p>Sınav tecrübeniz bizim için çok değerli. Lütfen Google işletme sayfamızda yorum yaparak bize destek olun. Yorumunuzu paylaştıktan sonra katılım kodunuzu alabilirsiniz.</p>
-
-    <iframe src="https://www.google.com/search?sca_esv=42205e6ff90f4371&sxsrf=ADLYWILAI9cgUvbGmHISjJWlSYX4x-wN3g:1728545939695&q=tac+dil+k%C4%B1z%C4%B1lay&uds=ADvngMgcma2krFDWAfXM9WWaYuEsGnye6AP91qW8d68i5LSq1CTCWfa6psLWPDoHzCPpFQdx6Jni4ZbD1Gka_39LbIbR2tpEvcleUl9615C0uDOvJ7GlZrbDx9JoLS_7e-_lpcu1LavT&si=ACC90nwjPmqJHrCEt6ewASzksVFQDX8zco_7MgBaIawvaF4-7jRpA53PftWD860YxTGupl3Xu77AboCuap1bHY_n88TNyPp0rkPw8MDkjmI7EjT8hD7xifw%3D&sa=X&ved=2ahUKEwjsnNq1p4OJAxXWQ_EDHWrCEJMQ3PALegQIGhAE&biw=1272&bih=568&dpr=1.5#" ></iframe>
-
-    <button class="button" onclick="showPasswordInput()">Yorumu Gönder ve Kodu Al</button>
-
-    <div id="passwordSection" class="hidden">
-        <h3>Doğum Tarihinizi Girin</h3>
-        <input type="date" id="dob" name="dob" placeholder="GG/AA/YYYY">
-        <button class="button" onclick="generateRandomCode()">Kodu Al</button>
-    </div>
-
-    <div id="result" class="hidden">
-        <!-- Katılımcı Kodu buraya gelecek -->
-    </div>
-</main>
-
-</body>
-</html>
+diff --git a/index.html b/index.html
+index f362642b43543a56ae112c9433eac386cbb51505..f205bdbf0968f2815acf209b77e2801810e9aa08 100644
+--- a/index.html
++++ b/index.html
+@@ -1,111 +1,764 @@
+ <!DOCTYPE html>
+ <html lang="tr">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <meta name="description" content="Yorum yaparak tecrübenizi paylaşın ve sınav için katılımcı kodunuzu alın. TAC Dil Kursu, kaliteli eğitim ve sınav hazırlığıyla fark yaratıyor.">
+-    <title>Yorum Yap ve Katılım Kodu Al</title>
++    <title>Almanca A1 Kelime Çalışmaları</title>
++    <meta name="description" content="Aile birleşimi sınavı için en gerekli 100 Almanca kelimeyi telefondan çalışın. Öğren, tekrar et, test çöz ve yazma pratiği yap.">
+     <style>
++        :root {
++            color-scheme: light;
++            --primary: #1b6ca8;
++            --primary-dark: #15517d;
++            --accent: #f7b633;
++            --text: #1a1a1a;
++            --muted: #555;
++            --surface: #ffffff;
++            --surface-alt: #f2f6fb;
++        }
++
++        * {
++            box-sizing: border-box;
++        }
++
+         body {
+-            font-family: Arial, sans-serif;
+             margin: 0;
+-            padding: 0;
+-            box-sizing: border-box;
+-            background-color: #f9f9f9;
++            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
++            background: var(--surface-alt);
++            color: var(--text);
++            line-height: 1.5;
+         }
+ 
+         header {
+-            background-color: #4CAF50;
+-            color: white;
+-            padding: 10px 0;
++            background: var(--primary);
++            color: #fff;
++            padding: 18px 16px 28px;
+             text-align: center;
++            position: sticky;
++            top: 0;
++            z-index: 10;
++            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
++        }
++
++        header h1 {
++            margin: 0 0 8px;
++            font-size: clamp(1.5rem, 4vw, 1.9rem);
++        }
++
++        header p {
++            margin: 0;
++            font-size: clamp(0.95rem, 3vw, 1.05rem);
+         }
+ 
+         main {
+-            padding: 20px;
+-            text-align: center;
++            padding: 16px;
++            max-width: 960px;
++            margin: 0 auto 64px;
+         }
+ 
+-        iframe {
+-            width: 100%;
+-            height: 500px;
+-            border: none;
++        nav {
++            display: grid;
++            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
++            gap: 12px;
+             margin-bottom: 20px;
+         }
+ 
+-        .button {
+-            background-color: #4CAF50;
+-            color: white;
+-            padding: 10px 20px;
++        nav button {
++            padding: 14px 10px;
+             border: none;
+-            cursor: pointer;
+-            font-size: 18px;
+-            border-radius: 5px;
+-            margin-top: 20px;
++            border-radius: 14px;
++            background: #fff;
++            color: var(--primary);
++            font-size: 0.95rem;
++            font-weight: 600;
++            box-shadow: 0 2px 6px rgba(27, 108, 168, 0.12);
++            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+         }
+ 
+-        .button:hover {
+-            background-color: #45a049;
++        nav button.active,
++        nav button:focus-visible {
++            background: var(--primary);
++            color: #fff;
++            outline: none;
++            transform: translateY(-2px);
++            box-shadow: 0 6px 14px rgba(27, 108, 168, 0.24);
+         }
+ 
+-        .hidden {
++        nav button:hover {
++            transform: translateY(-2px);
++            box-shadow: 0 6px 14px rgba(27, 108, 168, 0.22);
++        }
++
++        section {
+             display: none;
++            background: var(--surface);
++            border-radius: 18px;
++            padding: 18px;
++            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
++        }
++
++        section.active {
++            display: block;
++        }
++
++        h2 {
++            margin-top: 0;
++            font-size: 1.3rem;
++        }
++
++        .intro {
++            background: linear-gradient(135deg, rgba(27, 108, 168, 0.08), rgba(247, 182, 51, 0.14));
++            border-radius: 16px;
++            padding: 16px;
++            margin-bottom: 20px;
++            font-size: 0.95rem;
++        }
++
++        .tag {
++            display: inline-flex;
++            align-items: center;
++            gap: 6px;
++            background: rgba(27, 108, 168, 0.12);
++            color: var(--primary-dark);
++            border-radius: 999px;
++            padding: 6px 12px;
++            font-size: 0.8rem;
++            margin-right: 6px;
++            margin-bottom: 6px;
++        }
++
++        .filters {
++            display: flex;
++            flex-wrap: wrap;
++            gap: 10px;
++            margin-bottom: 18px;
++        }
++
++        .filters button {
++            border: 1px solid rgba(27, 108, 168, 0.3);
++            background: transparent;
++            color: var(--primary);
++            padding: 8px 14px;
++            border-radius: 999px;
++            font-size: 0.9rem;
++            transition: background 0.15s ease, color 0.15s ease;
++        }
++
++        .filters button.active {
++            background: var(--primary);
++            color: #fff;
++        }
++
++        .word-grid {
++            display: grid;
++            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
++            gap: 12px;
++        }
++
++        .word-card {
++            background: var(--surface-alt);
++            border-radius: 12px;
++            padding: 12px;
++            text-align: left;
++            box-shadow: inset 0 0 0 1px rgba(27, 108, 168, 0.08);
++            display: flex;
++            flex-direction: column;
++            gap: 4px;
++        }
++
++        .word-card strong {
++            font-size: 1.05rem;
++            color: var(--primary-dark);
++        }
++
++        .word-card span {
++            font-size: 0.9rem;
++            color: var(--muted);
++        }
++
++        .flashcard {
++            background: linear-gradient(160deg, #fff, rgba(27, 108, 168, 0.05));
++            border-radius: 16px;
++            padding: 24px;
++            text-align: center;
++            box-shadow: inset 0 0 0 1px rgba(27, 108, 168, 0.1);
++            min-height: 180px;
++            display: flex;
++            flex-direction: column;
++            justify-content: center;
++            gap: 12px;
++        }
++
++        .flashcard .term {
++            font-size: clamp(1.6rem, 5vw, 2rem);
++            font-weight: 700;
++            color: var(--primary-dark);
++        }
++
++        .flashcard .translation {
++            font-size: 1.1rem;
++            color: var(--muted);
++        }
++
++        .actions {
++            margin-top: 16px;
++            display: flex;
++            flex-wrap: wrap;
++            gap: 10px;
++            justify-content: center;
++        }
++
++        .actions button {
++            padding: 12px 18px;
++            border: none;
++            border-radius: 12px;
++            background: var(--primary);
++            color: #fff;
++            font-size: 0.95rem;
++            font-weight: 600;
++            display: inline-flex;
++            align-items: center;
++            gap: 6px;
++            box-shadow: 0 6px 16px rgba(27, 108, 168, 0.24);
++        }
++
++        .actions button.secondary {
++            background: rgba(27, 108, 168, 0.12);
++            color: var(--primary-dark);
++            box-shadow: none;
++        }
++
++        .quiz-card {
++            background: linear-gradient(180deg, #fff, rgba(247, 182, 51, 0.08));
++            border-radius: 16px;
++            padding: 20px;
++            box-shadow: inset 0 0 0 1px rgba(247, 182, 51, 0.2);
++            display: flex;
++            flex-direction: column;
++            gap: 16px;
++        }
++
++        .quiz-card h3 {
++            margin: 0;
++            font-size: 1.1rem;
++        }
++
++        .quiz-options {
++            display: grid;
++            gap: 10px;
++        }
++
++        .quiz-options button {
++            padding: 12px 14px;
++            border-radius: 12px;
++            border: 1px solid rgba(27, 108, 168, 0.18);
++            background: #fff;
++            text-align: left;
++            font-size: 0.95rem;
++        }
++
++        .quiz-options button.correct {
++            border-color: #2a9d8f;
++            background: rgba(42, 157, 143, 0.12);
++        }
++
++        .quiz-options button.incorrect {
++            border-color: #e63946;
++            background: rgba(230, 57, 70, 0.12);
++        }
++
++        .score {
++            text-align: center;
++            font-weight: 600;
++            color: var(--primary-dark);
++        }
++
++        .practice-card {
++            background: #fff;
++            border-radius: 16px;
++            padding: 20px;
++            display: flex;
++            flex-direction: column;
++            gap: 12px;
++            box-shadow: inset 0 0 0 1px rgba(27, 108, 168, 0.1);
++        }
++
++        .practice-card input {
++            padding: 12px;
++            font-size: 1rem;
++            border-radius: 12px;
++            border: 1px solid rgba(27, 108, 168, 0.25);
++        }
++
++        .practice-card .feedback {
++            min-height: 24px;
++            font-weight: 600;
++        }
++
++        .tips {
++            margin-top: 20px;
++            background: rgba(247, 182, 51, 0.12);
++            border-radius: 14px;
++            padding: 16px;
++            font-size: 0.9rem;
+         }
+ 
+-        @media (max-width: 600px) {
+-            iframe {
+-                height: 300px;
++        footer {
++            text-align: center;
++            padding: 24px 12px 32px;
++            color: var(--muted);
++            font-size: 0.85rem;
++        }
++
++        @media (min-width: 768px) {
++            nav {
++                grid-template-columns: repeat(4, 1fr);
+             }
++        }
+ 
+-            .button {
+-                font-size: 16px;
+-                padding: 8px 16px;
++        @media (prefers-reduced-motion: reduce) {
++            * {
++                transition-duration: 0.01ms !important;
++                animation-duration: 0.01ms !important;
+             }
+         }
+     </style>
++</head>
++<body>
++    <header>
++        <h1>Almanca A1 Kelime Koçu</h1>
++        <p>20-50 yaş arası katılımcılar için aile birleşimi sınavına uygun, telefonda hızlı kelime pratiği.</p>
++    </header>
++
++    <main>
++        <div class="intro">
++            <p>En önemli 100 Almanca kelimeyi kategorilere ayrılmış şekilde inceleyin, flashcard ile pekiştirin, hızlı testler çözüp yazma pratiği yapın. Her gün 10 dakika ayırmak temel kelime hazinesini güçlendirir.</p>
++            <div>
++                <span class="tag">📱 Mobil uyumlu</span>
++                <span class="tag">🎯 A1 hedef kelimeler</span>
++                <span class="tag">⏱️ Kısa ve net egzersizler</span>
++            </div>
++        </div>
++
++        <nav aria-label="Çalışma menüsü">
++            <button type="button" data-section="learn" class="active">Kelime Listesi</button>
++            <button type="button" data-section="flashcards">Flashcard</button>
++            <button type="button" data-section="quiz">Çoktan Seçmeli</button>
++            <button type="button" data-section="writing">Yazma Pratiği</button>
++        </nav>
++
++        <section id="learn" class="active" aria-live="polite">
++            <h2>Kategorilere göre kelimeler</h2>
++            <p>İpucu: Her kategoriden 5 kelime seçip gün içinde tekrar edin. Sınavda aile, alışveriş ve şehir içinde yol tarifleri öne çıkar.</p>
++            <div class="filters" role="tablist" aria-label="Kategori filtreleri">
++                <button type="button" class="active" data-filter="all">Tümü</button>
++            </div>
++            <div class="word-grid" id="wordGrid"></div>
++        </section>
++
++        <section id="flashcards" aria-live="polite">
++            <h2>Flashcard ile tekrar</h2>
++            <p>Ekrana gelen Almanca kelimenin Türkçesini hatırlayın ve kontrol edin. 10 doğru yaptıktan sonra kategori değiştirin.</p>
++            <div class="flashcard" id="flashcard">
++                <div class="term" id="flashcardTerm">Kelimeyi öğrenmeye hazır mısınız?</div>
++                <div class="translation" id="flashcardTranslation">Başlamak için "Yeni kart"a dokunun.</div>
++            </div>
++            <div class="actions">
++                <button type="button" id="newFlashcard">Yeni kart</button>
++                <button type="button" class="secondary" id="toggleTranslation">Çeviriyi Göster</button>
++            </div>
++        </section>
++
++        <section id="quiz" aria-live="polite">
++            <h2>Çoktan seçmeli test</h2>
++            <p>10 soruluk mini testlerle öğrenmenizi ölçün. Türkçe anlamı verilen kelimenin Almanca karşılığını seçin.</p>
++            <div class="quiz-card">
++                <h3 id="quizQuestion">Teste başlamak için butona basın.</h3>
++                <div class="quiz-options" id="quizOptions" role="group" aria-label="Çoktan seçmeli cevaplar"></div>
++                <div class="score" id="quizScore"></div>
++            </div>
++            <div class="actions">
++                <button type="button" id="startQuiz">Teste Başla</button>
++                <button type="button" class="secondary" id="nextQuestion" disabled>Sonraki Soru</button>
++            </div>
++        </section>
++
++        <section id="writing" aria-live="polite">
++            <h2>Yazma pratiği</h2>
++            <p>Günlük yazışma ve sınav formu doldurmalarında kullanılan kelimeleri yazmayı pekiştirin. Türkçe kelimenin Almancasını yazın.</p>
++            <div class="practice-card">
++                <div>
++                    <strong id="writingPrompt">Hazır olduğunuzda "Yeni Kelime"ye dokunun.</strong>
++                </div>
++                <label for="writingInput">Almanca karşılığı:</label>
++                <input type="text" id="writingInput" placeholder="Kelimeyi Almanca yazın" autocomplete="off" disabled>
++                <div class="actions">
++                    <button type="button" id="checkWriting" disabled>Kontrol Et</button>
++                    <button type="button" class="secondary" id="newWriting">Yeni Kelime</button>
++                </div>
++                <div class="feedback" id="writingFeedback" role="status"></div>
++            </div>
++            <div class="tips">
++                <p><strong>Çalışma tavsiyesi:</strong> Zorlandığınız kelimeleri bir deftere not edin. Kelimeyi içeren kısa cümle yazmak hafızayı güçlendirir. Örn: <em>"Ich brauche ein Ticket."</em></p>
++            </div>
++        </section>
++    </main>
++
++    <footer>
++        © 2024 TAC Dil Destek • Almanca A1 aile birleşimi kelime koçu
++    </footer>
++
+     <script>
+-        function showPasswordInput() {
+-            document.getElementById("passwordSection").classList.remove("hidden");
+-        }
+-
+-        function generateRandomCode() {
+-            var dob = document.getElementById("dob").value;
+-            
+-            if (dob) {
+-                // Random 6-digit code generation
+-                var randomCode = Math.floor(100000 + Math.random() * 900000);
+-                document.getElementById("result").innerText = "Katılımcı Kodu: " + randomCode;
+-                document.getElementById("result").classList.remove("hidden");
++        const vocabulary = [
++            { german: "Hallo", turkish: "Merhaba", category: "Selamlaşma" },
++            { german: "Guten Morgen", turkish: "Günaydın", category: "Selamlaşma" },
++            { german: "Guten Abend", turkish: "İyi akşamlar", category: "Selamlaşma" },
++            { german: "Gute Nacht", turkish: "İyi geceler", category: "Selamlaşma" },
++            { german: "Tschüss", turkish: "Hoşça kal", category: "Selamlaşma" },
++            { german: "Danke", turkish: "Teşekkür ederim", category: "Selamlaşma" },
++            { german: "Bitte", turkish: "Lütfen / Rica ederim", category: "Selamlaşma" },
++            { german: "Wie geht's?", turkish: "Nasılsın?", category: "Selamlaşma" },
++            { german: "Willkommen", turkish: "Hoş geldiniz", category: "Selamlaşma" },
++            { german: "Entschuldigung", turkish: "Affedersiniz", category: "Selamlaşma" },
++
++            { german: "Mutter", turkish: "Anne", category: "Aile" },
++            { german: "Vater", turkish: "Baba", category: "Aile" },
++            { german: "Eltern", turkish: "Ebeveynler", category: "Aile" },
++            { german: "Bruder", turkish: "Erkek kardeş", category: "Aile" },
++            { german: "Schwester", turkish: "Kız kardeş", category: "Aile" },
++            { german: "Kind", turkish: "Çocuk", category: "Aile" },
++            { german: "Sohn", turkish: "Oğul", category: "Aile" },
++            { german: "Tochter", turkish: "Kız evlat", category: "Aile" },
++            { german: "Familie", turkish: "Aile", category: "Aile" },
++            { german: "Ehefrau", turkish: "Eş (kadın)", category: "Aile" },
++
++            { german: "Haus", turkish: "Ev", category: "Günlük Hayat" },
++            { german: "Wohnung", turkish: "Daire", category: "Günlük Hayat" },
++            { german: "Zimmer", turkish: "Oda", category: "Günlük Hayat" },
++            { german: "Schlüssel", turkish: "Anahtar", category: "Günlük Hayat" },
++            { german: "Tür", turkish: "Kapı", category: "Günlük Hayat" },
++            { german: "Fenster", turkish: "Pencere", category: "Günlük Hayat" },
++            { german: "Tisch", turkish: "Masa", category: "Günlük Hayat" },
++            { german: "Stuhl", turkish: "Sandalye", category: "Günlük Hayat" },
++            { german: "Bett", turkish: "Yatak", category: "Günlük Hayat" },
++            { german: "Lampe", turkish: "Lamba", category: "Günlük Hayat" },
++
++            { german: "Brot", turkish: "Ekmek", category: "Yiyecek & İçecek" },
++            { german: "Wasser", turkish: "Su", category: "Yiyecek & İçecek" },
++            { german: "Milch", turkish: "Süt", category: "Yiyecek & İçecek" },
++            { german: "Kaffee", turkish: "Kahve", category: "Yiyecek & İçecek" },
++            { german: "Tee", turkish: "Çay", category: "Yiyecek & İçecek" },
++            { german: "Apfel", turkish: "Elma", category: "Yiyecek & İçecek" },
++            { german: "Käse", turkish: "Peynir", category: "Yiyecek & İçecek" },
++            { german: "Suppe", turkish: "Çorba", category: "Yiyecek & İçecek" },
++            { german: "Fleisch", turkish: "Et", category: "Yiyecek & İçecek" },
++            { german: "Gemüse", turkish: "Sebze", category: "Yiyecek & İçecek" },
++
++            { german: "Laden", turkish: "Dükkan", category: "Alışveriş" },
++            { german: "Markt", turkish: "Pazar", category: "Alışveriş" },
++            { german: "Preis", turkish: "Fiyat", category: "Alışveriş" },
++            { german: "Geld", turkish: "Para", category: "Alışveriş" },
++            { german: "Rechnung", turkish: "Fatura", category: "Alışveriş" },
++            { german: "Angebot", turkish: "Teklif / İndirim", category: "Alışveriş" },
++            { german: "Verkäufer", turkish: "Satıcı", category: "Alışveriş" },
++            { german: "Kunde", turkish: "Müşteri", category: "Alışveriş" },
++            { german: "Tasche", turkish: "Çanta", category: "Alışveriş" },
++            { german: "Kasse", turkish: "Kasa", category: "Alışveriş" },
++
++            { german: "Stadt", turkish: "Şehir", category: "Şehir & Yolculuk" },
++            { german: "Straße", turkish: "Cadde", category: "Şehir & Yolculuk" },
++            { german: "Bahnhof", turkish: "Tren istasyonu", category: "Şehir & Yolculuk" },
++            { german: "Bus", turkish: "Otobüs", category: "Şehir & Yolculuk" },
++            { german: "Zug", turkish: "Tren", category: "Şehir & Yolculuk" },
++            { german: "Auto", turkish: "Araba", category: "Şehir & Yolculuk" },
++            { german: "Taxi", turkish: "Taksi", category: "Şehir & Yolculuk" },
++            { german: "Flughafen", turkish: "Havalimanı", category: "Şehir & Yolculuk" },
++            { german: "Fahrkarte", turkish: "Bilet", category: "Şehir & Yolculuk" },
++            { german: "Plan", turkish: "Plan / Harita", category: "Şehir & Yolculuk" },
++
++            { german: "Heute", turkish: "Bugün", category: "Zaman & Takvim" },
++            { german: "Morgen", turkish: "Yarın", category: "Zaman & Takvim" },
++            { german: "Gestern", turkish: "Dün", category: "Zaman & Takvim" },
++            { german: "Woche", turkish: "Hafta", category: "Zaman & Takvim" },
++            { german: "Monat", turkish: "Ay", category: "Zaman & Takvim" },
++            { german: "Jahr", turkish: "Yıl", category: "Zaman & Takvim" },
++            { german: "Uhr", turkish: "Saat", category: "Zaman & Takvim" },
++            { german: "Stunde", turkish: "Saat (60 dakika)", category: "Zaman & Takvim" },
++            { german: "Minute", turkish: "Dakika", category: "Zaman & Takvim" },
++            { german: "Termin", turkish: "Randevu", category: "Zaman & Takvim" },
++
++            { german: "Arzt", turkish: "Doktor", category: "Sağlık" },
++            { german: "Krank", turkish: "Hasta", category: "Sağlık" },
++            { german: "Gesundheit", turkish: "Sağlık", category: "Sağlık" },
++            { german: "Krankenhaus", turkish: "Hastane", category: "Sağlık" },
++            { german: "Apotheke", turkish: "Eczane", category: "Sağlık" },
++            { german: "Medikament", turkish: "İlaç", category: "Sağlık" },
++            { german: "Schmerz", turkish: "Ağrı", category: "Sağlık" },
++            { german: "Untersuchung", turkish: "Muayene", category: "Sağlık" },
++            { german: "Rezept", turkish: "Reçete", category: "Sağlık" },
++            { german: "Patient", turkish: "Hasta (kişi)", category: "Sağlık" },
++
++            { german: "Küche", turkish: "Mutfak", category: "Ev & Eşyalar" },
++            { german: "Bad", turkish: "Banyo", category: "Ev & Eşyalar" },
++            { german: "Wohnzimmer", turkish: "Oturma odası", category: "Ev & Eşyalar" },
++            { german: "Schlafzimmer", turkish: "Yatak odası", category: "Ev & Eşyalar" },
++            { german: "Kühlschrank", turkish: "Buzdolabı", category: "Ev & Eşyalar" },
++            { german: "Herd", turkish: "Ocak", category: "Ev & Eşyalar" },
++            { german: "Waschmaschine", turkish: "Çamaşır makinesi", category: "Ev & Eşyalar" },
++            { german: "Sofa", turkish: "Kanepe", category: "Ev & Eşyalar" },
++            { german: "Teppich", turkish: "Halı", category: "Ev & Eşyalar" },
++            { german: "Spiegel", turkish: "Ayna", category: "Ev & Eşyalar" },
++
++            { german: "gehen", turkish: "Gitmek", category: "Fiiller" },
++            { german: "kommen", turkish: "Gelmek", category: "Fiiller" },
++            { german: "machen", turkish: "Yapmak", category: "Fiiller" },
++            { german: "sprechen", turkish: "Konuşmak", category: "Fiiller" },
++            { german: "lernen", turkish: "Öğrenmek", category: "Fiiller" },
++            { german: "arbeiten", turkish: "Çalışmak", category: "Fiiller" },
++            { german: "essen", turkish: "Yemek yemek", category: "Fiiller" },
++            { german: "trinken", turkish: "İçmek", category: "Fiiller" },
++            { german: "schlafen", turkish: "Uyumak", category: "Fiiller" },
++            { german: "kaufen", turkish: "Satın almak", category: "Fiiller" }
++        ];
++
++        const sections = document.querySelectorAll("main section");
++        const navButtons = document.querySelectorAll("nav button");
++
++        navButtons.forEach(button => {
++            button.addEventListener("click", () => {
++                navButtons.forEach(btn => btn.classList.remove("active"));
++                button.classList.add("active");
++
++                const target = button.dataset.section;
++                sections.forEach(section => {
++                    section.classList.toggle("active", section.id === target);
++                });
++            });
++        });
++
++        // Kelime listesi oluşturma
++        const wordGrid = document.getElementById("wordGrid");
++        const filters = document.querySelector(".filters");
++        const categories = ["Tümü", ...new Set(vocabulary.map(item => item.category))];
++
++        categories.forEach(category => {
++            if (category === "Tümü") return;
++            const filterButton = document.createElement("button");
++            filterButton.type = "button";
++            filterButton.textContent = category;
++            filterButton.dataset.filter = category;
++            filters.appendChild(filterButton);
++        });
++
++        function renderWords(filter = "all") {
++            wordGrid.innerHTML = "";
++            const filteredWords = filter === "all" ? vocabulary : vocabulary.filter(item => item.category === filter);
++
++            filteredWords.forEach(item => {
++                const card = document.createElement("div");
++                card.className = "word-card";
++                card.innerHTML = `
++                    <strong>${item.german}</strong>
++                    <span>${item.turkish}</span>
++                    <span class="tag">${item.category}</span>
++                `;
++                wordGrid.appendChild(card);
++            });
++        }
++
++        filters.addEventListener("click", event => {
++            const button = event.target.closest("button");
++            if (!button) return;
++
++            filters.querySelectorAll("button").forEach(btn => btn.classList.remove("active"));
++            button.classList.add("active");
++
++            const filter = button.dataset.filter || "all";
++            renderWords(filter === "all" ? "all" : filter);
++        });
++
++        renderWords();
++
++        // Flashcard mantığı
++        let flashcardPool = shuffle([...vocabulary]);
++        let currentFlashcard = null;
++        let showTranslation = false;
++
++        function shuffle(array) {
++            const arr = [...array];
++            for (let i = arr.length - 1; i > 0; i--) {
++                const j = Math.floor(Math.random() * (i + 1));
++                [arr[i], arr[j]] = [arr[j], arr[i]];
++            }
++            return arr;
++        }
++
++        function getNextFlashcard() {
++            if (flashcardPool.length === 0) {
++                flashcardPool = shuffle([...vocabulary]);
++            }
++            currentFlashcard = flashcardPool.pop();
++            showTranslation = false;
++            updateFlashcard();
++        }
++
++        function updateFlashcard() {
++            const termEl = document.getElementById("flashcardTerm");
++            const translationEl = document.getElementById("flashcardTranslation");
++
++            if (!currentFlashcard) {
++                termEl.textContent = "Kelimeyi görmek için 'Yeni kart' seçin.";
++                translationEl.textContent = "";
++                return;
++            }
++
++            termEl.textContent = currentFlashcard.german;
++            translationEl.textContent = showTranslation ? currentFlashcard.turkish : "Çeviriyi görmek için butona dokunun.";
++        }
++
++        document.getElementById("newFlashcard").addEventListener("click", () => {
++            getNextFlashcard();
++        });
++
++        document.getElementById("toggleTranslation").addEventListener("click", () => {
++            showTranslation = !showTranslation;
++            updateFlashcard();
++        });
++
++        // Quiz mantığı
++        const quizQuestion = document.getElementById("quizQuestion");
++        const quizOptions = document.getElementById("quizOptions");
++        const quizScore = document.getElementById("quizScore");
++        const startQuizBtn = document.getElementById("startQuiz");
++        const nextQuestionBtn = document.getElementById("nextQuestion");
++
++        let quizPool = [];
++        let quizIndex = 0;
++        let score = 0;
++        let answered = false;
++
++        function prepareQuiz() {
++            quizPool = shuffle([...vocabulary]).slice(0, 10);
++            quizIndex = 0;
++            score = 0;
++            quizScore.textContent = "";
++            nextQuestionBtn.disabled = false;
++            nextQuestionBtn.textContent = "Sonraki Soru";
++            loadQuizQuestion();
++        }
++
++        function loadQuizQuestion() {
++            answered = false;
++            const current = quizPool[quizIndex];
++            quizQuestion.textContent = `Türkçesi "${current.turkish}" olan kelimenin Almancası nedir?`;
++            quizOptions.innerHTML = "";
++
++            const options = shuffle([
++                current,
++                ...shuffle(vocabulary.filter(item => item.german !== current.german)).slice(0, 3)
++            ]).slice(0, 4);
++
++            options.forEach(option => {
++                const button = document.createElement("button");
++                button.type = "button";
++                button.textContent = option.german;
++                button.addEventListener("click", () => selectQuizAnswer(button, option.german === current.german));
++                quizOptions.appendChild(button);
++            });
++
++            quizScore.textContent = `Soru ${quizIndex + 1} / ${quizPool.length}`;
++        }
++
++        function selectQuizAnswer(button, isCorrect) {
++            if (answered) return;
++            answered = true;
++
++            if (isCorrect) {
++                button.classList.add("correct");
++                score++;
+             } else {
+-                alert("Lütfen doğum tarihini giriniz.");
++                button.classList.add("incorrect");
++                // Doğru cevabı işaretle
++                [...quizOptions.children].forEach(optionButton => {
++                    if (optionButton.textContent === quizPool[quizIndex].german) {
++                        optionButton.classList.add("correct");
++                    }
++                });
++            }
++
++            if (quizIndex === quizPool.length - 1) {
++                nextQuestionBtn.textContent = "Skoru Gör";
+             }
+         }
+-    </script>
+-</head>
+-<body>
+ 
+-<header>
+-    <h1>TAC Dil Kursu Yorum ve Katılım Kodu</h1>
+-</header>
++        function goToNextQuestion() {
++            if (!quizPool.length) return;
++            if (!answered) return;
++
++            if (quizIndex < quizPool.length - 1) {
++                quizIndex++;
++                loadQuizQuestion();
++            } else {
++                quizQuestion.textContent = "Test tamamlandı!";
++                quizOptions.innerHTML = "";
++                quizScore.textContent = `Toplam skorunuz: ${score} / ${quizPool.length}`;
++                nextQuestionBtn.disabled = true;
++            }
++        }
++
++        startQuizBtn.addEventListener("click", prepareQuiz);
++        nextQuestionBtn.addEventListener("click", goToNextQuestion);
++
++        // Yazma pratiği
++        const writingPrompt = document.getElementById("writingPrompt");
++        const writingInput = document.getElementById("writingInput");
++        const writingFeedback = document.getElementById("writingFeedback");
++        const checkWritingBtn = document.getElementById("checkWriting");
++        const newWritingBtn = document.getElementById("newWriting");
+ 
+-<main>
+-    <h2>Yorum yaparak tecrübenizi paylaşın!</h2>
+-    <p>Sınav tecrübeniz bizim için çok değerli. Lütfen Google işletme sayfamızda yorum yaparak bize destek olun. Yorumunuzu paylaştıktan sonra katılım kodunuzu alabilirsiniz.</p>
++        let currentWriting = null;
+ 
+-    <iframe src="https://www.google.com/search?sca_esv=42205e6ff90f4371&sxsrf=ADLYWILAI9cgUvbGmHISjJWlSYX4x-wN3g:1728545939695&q=tac+dil+k%C4%B1z%C4%B1lay&uds=ADvngMgcma2krFDWAfXM9WWaYuEsGnye6AP91qW8d68i5LSq1CTCWfa6psLWPDoHzCPpFQdx6Jni4ZbD1Gka_39LbIbR2tpEvcleUl9615C0uDOvJ7GlZrbDx9JoLS_7e-_lpcu1LavT&si=ACC90nwjPmqJHrCEt6ewASzksVFQDX8zco_7MgBaIawvaF4-7jRpA53PftWD860YxTGupl3Xu77AboCuap1bHY_n88TNyPp0rkPw8MDkjmI7EjT8hD7xifw%3D&sa=X&ved=2ahUKEwjsnNq1p4OJAxXWQ_EDHWrCEJMQ3PALegQIGhAE&biw=1272&bih=568&dpr=1.5#" ></iframe>
++        function newWritingWord() {
++            currentWriting = shuffle([...vocabulary]).pop();
++            writingPrompt.textContent = `Türkçe: "${currentWriting.turkish}"`; 
++            writingInput.value = "";
++            writingInput.disabled = false;
++            writingInput.focus();
++            checkWritingBtn.disabled = false;
++            writingFeedback.textContent = "";
++        }
+ 
+-    <button class="button" onclick="showPasswordInput()">Yorumu Gönder ve Kodu Al</button>
++        function checkWriting() {
++            if (!currentWriting) return;
++            const answer = writingInput.value.trim().toLowerCase();
++            const correct = currentWriting.german.toLowerCase();
++
++            if (!answer) {
++                writingFeedback.textContent = "Kelimeyi yazmayı deneyin.";
++                writingFeedback.style.color = "#e76f51";
++                return;
++            }
+ 
+-    <div id="passwordSection" class="hidden">
+-        <h3>Doğum Tarihinizi Girin</h3>
+-        <input type="date" id="dob" name="dob" placeholder="GG/AA/YYYY">
+-        <button class="button" onclick="generateRandomCode()">Kodu Al</button>
+-    </div>
++            if (answer === correct) {
++                writingFeedback.textContent = "Harika! Doğru yazdınız.";
++                writingFeedback.style.color = "#2a9d8f";
++            } else {
++                writingFeedback.textContent = `Doğru cevap: "${currentWriting.german}"`; 
++                writingFeedback.style.color = "#e63946";
++            }
+ 
+-    <div id="result" class="hidden">
+-        <!-- Katılımcı Kodu buraya gelecek -->
+-    </div>
+-</main>
++            checkWritingBtn.disabled = true;
++            writingInput.disabled = true;
++        }
+ 
++        checkWritingBtn.addEventListener("click", checkWriting);
++        newWritingBtn.addEventListener("click", newWritingWord);
++        writingInput.addEventListener("keydown", event => {
++            if (event.key === "Enter") {
++                event.preventDefault();
++                checkWriting();
++            }
++        });
++    </script>
+ </body>
+ </html>
